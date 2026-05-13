@@ -1,0 +1,18 @@
+{
+  "name": "weekly-report-skill",
+  "version": "1.0.0",
+  "description": "OpenClaw Skill - 假期前一天自动发送工作周报",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.0"
+  },
+  "openclaw": {
+    "skills": ["weekly-report"]
+  },
+  "keywords": ["openclaw", "weekly-report", "cron", "email"],
+  "author": "pangshq",
+  "license": "MIT"
+}
