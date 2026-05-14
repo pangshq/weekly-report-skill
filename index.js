@@ -131,14 +131,15 @@ module.exports = {
     const weekRange = getWeekWorkdays();
     const today = new Date();
     const dateStr = today.toISOString().split('T')[0];
-    const recipient = 'shiqinpang60@gmail.com';
+    const recipient = process.env.RECIPIENT || 'recipient@example.com';
     const subject = `${employeeName} ${weekRange.range} 工作周报`;
     const content = customContent || '已完成本周工作内容';
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+      host: process.env.SMTP_HOST || 'smtp.qq.com',
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: false,
+      requireTLS: true,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS
